@@ -124,6 +124,24 @@ nav {
     cursor: pointer;
 }
 
+/* Initially show hamburger icon, hide close icon */
+#navOpenIcon {
+    display: inline;
+}
+
+#navCloseIcon {
+    display: none;
+}
+
+/* When nav menu is open (responsive class added), toggle icons */
+.nav-menu.responsive ~ .nav-menu-btn #navOpenIcon {
+    display: none;
+}
+
+.nav-menu.responsive ~ .nav-menu-btn #navCloseIcon {
+    display: inline;
+}
+
 /* Show menu button on mobile */
 @media only screen and (max-width:900px) {
     .nav-menu-btn {

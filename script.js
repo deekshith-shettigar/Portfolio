@@ -1,10 +1,16 @@
-// Menu Function
 function myMenuFunction() {
     var menuBtn = document.getElementById("myNavMenu");
-    if (menuBtn.className == "nav-menu") {
+    var navOpenIcon = document.getElementById("navOpenIcon");
+    var navCloseIcon = document.getElementById("navCloseIcon");
+
+    if (menuBtn.className === "nav-menu") {
         menuBtn.className += " responsive";
+        navOpenIcon.style.display = "none";
+        navCloseIcon.style.display = "inline";
     } else {
         menuBtn.className = "nav-menu";
+        navOpenIcon.style.display = "inline";
+        navCloseIcon.style.display = "none";
     }
 }
 
