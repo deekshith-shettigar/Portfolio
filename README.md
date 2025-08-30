@@ -57,6 +57,6 @@ Here are some of the key projects showcased on the website:
    - A responsive online storefront with product listings and shopping functionality.
    - Technologies: HTML, CSS, JavaScript
      
-**Live Demo**: [https://cartloop.netlify.app/](https://deekshiportfolio.netlify.app/)
+**Live Demo**: [https://deekshiportfolio.netlify.app/](https://deekshiportfolio.netlify.app/)
 
 
