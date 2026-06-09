@@ -90,9 +90,9 @@ document.querySelectorAll(".nav-link").forEach(function(link) {
     link.addEventListener("click", function(e) {
         const href = this.getAttribute("href");
         if (!href || !href.startsWith('#')) { closeMenu(); return; }
+        e.preventDefault();
         const sectionId = href.replace('#', '');
         if (isMobile()) {
-            e.preventDefault();
             closeMenu();
             if (sectionId === 'home') {
                 goBackHome();
@@ -101,6 +101,11 @@ document.querySelectorAll(".nav-link").forEach(function(link) {
             }
         } else {
             closeMenu();
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+                history.replaceState(null, '', window.location.pathname);
+            }
         }
     });
 });
