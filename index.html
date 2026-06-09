@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deekshith_Shettigar_Resume</title>
+    <meta name="description" content="Deekshith Shettigar – Full Stack Developer portfolio. React, Node.js, PHP, MySQL projects and more.">
+    <title>Deekshith Shettigar | Full Stack Developer</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="assests/Fevicon.jpg" type="image/png">
+    <link rel="shortcut icon" href="assets/Fevicon.jpg" type="image/png">
 </head>
 
 <body>
@@ -15,13 +16,13 @@
         <nav id="header">
             <div class="nav-logo">
                 <a href="#home">
-                    <img src="assests/Logo.png" alt="Deekshith Logo" class="nav-logo-img">
+                    <img src="assets/Logo.png" alt="Deekshith Logo" class="nav-logo-img">
                 </a>
             </div>
             <div class="nav-menu" id="myNavMenu">
                 <!-- Sidebar profile header -->
                 <div class="sidebar-header">
-                    <img src="assests/avatar.jpg" alt="Deekshith" class="sidebar-avatar">
+                    <img src="assets/avatar.jpg" alt="Deekshith" class="sidebar-avatar">
                     <div>
                         <p class="sidebar-name">Deekshith Shettigar</p>
                         <p class="sidebar-role">Full Stack Developer</p>
@@ -120,7 +121,7 @@
                 </div>
                 <div class="featured-image">
                     <div class="image">
-                        <img src="assests/avatar.jpg" alt="avatar">
+                        <img src="assets/avatar.jpg" alt="avatar">
                     </div>
                 </div>
                 <div class="scroll-icon-box">
@@ -139,7 +140,7 @@
                 <!-- Profile card -->
                 <div class="about-profile-card">
                     <div class="about-avatar-wrap">
-                        <img src="assests/avatar.jpg" alt="Deekshith Shettigar" class="about-avatar">
+                        <img src="assets/avatar.jpg" alt="Deekshith Shettigar" class="about-avatar">
                     </div>
                     <div class="about-profile-info">
                         <h2 class="about-name">Deekshith Shettigar</h2>
@@ -372,7 +373,7 @@
 
                     <div class="project-card">
                         <div class="project-img-wrap">
-                            <img src="assests/Project 1.png" alt="LockVerse Screenshot" class="project-img">
+                            <img src="assets/Project 1.png" alt="LockVerse Screenshot" class="project-img">
                         </div>
                         <div class="project-card-header">
                             <i class="uil uil-padlock project-card-icon"></i>
@@ -408,7 +409,7 @@
 
                     <div class="project-card">
                         <div class="project-img-wrap">
-                            <img src="assests/Project 2.png" alt="Lodge Management System Screenshot"
+                            <img src="assets/Project 2.png" alt="Lodge Management System Screenshot"
                                 class="project-img">
                         </div>
                         <div class="project-card-header">
@@ -463,7 +464,7 @@
                     <!-- Great Learning -->
                     <div class="cert-img-card">
                         <div class="cert-img-wrap">
-                            <img src="assests/Certificate1.jpeg" alt="SQL for Data Science - Great Learning"
+                            <img src="assets/Certificate1.jpeg" alt="SQL for Data Science - Great Learning"
                                 class="cert-img">
                         </div>
                         <div class="cert-img-info">
@@ -476,7 +477,7 @@
                     <!-- NPTEL -->
                     <div class="cert-img-card">
                         <div class="cert-img-wrap">
-                            <img src="assests/Certificate 2.png" alt="Privacy and Security - NPTEL" class="cert-img">
+                            <img src="assets/Certificate 2.png" alt="Privacy and Security - NPTEL" class="cert-img">
                         </div>
                         <div class="cert-img-info">
                             <div class="cert-img-badge nptel-badge">NPTEL · Elite</div>
@@ -488,7 +489,7 @@
                     <!-- Infosys 1 -->
                     <div class="cert-img-card">
                         <div class="cert-img-wrap">
-                            <img src="assests/Certificate 3.jpeg" alt="Bash Scripting - Infosys Springboard"
+                            <img src="assets/Certificate 3.jpeg" alt="Bash Scripting - Infosys Springboard"
                                 class="cert-img">
                         </div>
                         <div class="cert-img-info">
@@ -501,7 +502,7 @@
                     <!-- Infosys 2 -->
                     <div class="cert-img-card">
                         <div class="cert-img-wrap">
-                            <img src="assests/Certificate 4.jpeg" alt="Data Structures Java - Infosys Springboard"
+                            <img src="assets/Certificate 4.jpeg" alt="Data Structures Java - Infosys Springboard"
                                 class="cert-img">
                         </div>
                         <div class="cert-img-info">
@@ -545,22 +546,23 @@
                         <div class="form-inputs">
                             <div class="input-group">
                                 <i class="uil uil-user"></i>
-                                <input type="text" class="input-field" placeholder="Your Name">
+                                <input type="text" id="contact-name" class="input-field" placeholder="Your Name">
                             </div>
                             <div class="input-group">
                                 <i class="uil uil-envelope"></i>
-                                <input type="email" class="input-field" placeholder="Your Email">
+                                <input type="email" id="contact-email" class="input-field" placeholder="Your Email">
                             </div>
                         </div>
                         <div class="input-group" style="margin-top:14px;">
                             <i class="uil uil-comment-alt-lines" style="top:18px; transform:none;"></i>
-                            <textarea placeholder="Your Message"></textarea>
+                            <textarea id="contact-message" placeholder="Your Message"></textarea>
                         </div>
                         <div class="form-button" style="margin-top:14px;">
-                            <button class="btn send-btn">
+                            <button class="btn send-btn" id="send-btn">
                                 Send Message <i class="uil uil-message"></i>
                             </button>
                         </div>
+                        <p id="contact-toast" style="display:none; margin-top:12px; font-size:0.9rem;"></p>
                     </div>
                 </div>
             </section>
@@ -569,7 +571,7 @@
         <footer>
             <div class="top-footer">
                 <p>Deekshith Shettigar</p>
-                <span>Full Stack Developer · Open to Work</span>
+                <span>Full Stack Developer</span>
             </div>
             <div class="middle-footer">
                 <ul class="footer-menu">
@@ -621,6 +623,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 

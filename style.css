@@ -162,6 +162,15 @@ nav {
     width: 70%;
 }
 
+.nav-link-active {
+    color: #1a1a2e;
+    font-weight: 600;
+}
+
+.nav-link-active::after {
+    width: 70% !important;
+}
+
 /* Hide icons only in desktop nav bar */
 @media only screen and (min-width: 901px) {
     .nav-link i {

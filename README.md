@@ -10,12 +10,14 @@ A modern, fully responsive personal portfolio website showcasing my skills, proj
 - **Mobile Sidebar** — Slide-in drawer with profile card, nav links, and social icons
 - **Typing Effect** — Dynamic role animation on the hero section (Designer / Developer)
 - **Scroll Animations** — Smooth fade/slide/scale animations triggered on scroll using Intersection Observer
+- **Active Nav Highlighting** — Scroll-spy highlights the current section in the navbar as you scroll
+- **Working Contact Form** — EmailJS-powered form with validation, loading state, and success/error toast
 - **Sections** — Home, About, Education, Experience, Projects, Certifications, Contact
 - **Project Previews** — Screenshot images with tech stack badges, bullet points, GitHub & Live Demo buttons
 - **Certificate Gallery** — Real certificate images displayed in a card grid
-- **Contact Form** — Name, email, and message form with focus animations
 - **Downloadable Resume** — CV download button in navbar, hero, about, and mobile sidebar
 - **Social Links** — Instagram, LinkedIn, GitHub integrated throughout
+- **SEO Ready** — Meta description and optimised title tag for search and link previews
 
 ---
 
@@ -26,7 +28,7 @@ A modern, fully responsive personal portfolio website showcasing my skills, proj
 | Structure | HTML5 |
 | Styling | CSS3, Custom Animations, Flexbox, Grid |
 | Scripting | Vanilla JavaScript, Intersection Observer API |
-| Libraries | [Typed.js](https://github.com/mattboldt/typed.js/) · [Unicons v4](https://iconscout.com/unicons) · [Google Fonts (Poppins)](https://fonts.google.com/specimen/Poppins) |
+| Libraries | [Typed.js](https://github.com/mattboldt/typed.js/) · [EmailJS](https://www.emailjs.com/) · [Unicons v4](https://iconscout.com/unicons) · [Google Fonts (Poppins)](https://fonts.google.com/specimen/Poppins) |
 
 ---
 
@@ -36,18 +38,18 @@ A modern, fully responsive personal portfolio website showcasing my skills, proj
 Portfolio/
 ├── index.html          # Main HTML file
 ├── style.css           # All styles and responsive CSS
-├── script.js           # Interactivity, animations, mobile logic
+├── script.js           # Interactivity, animations, mobile logic, EmailJS handler
 ├── My_Resume.pdf       # Downloadable CV
-└── assests/
+└── assets/
     ├── avatar.jpg           # Profile photo
     ├── Logo.png             # Navbar logo
-    ├── Favicon.png          # Browser tab icon
-    ├── project_lockverse.png
-    ├── project_lodge.png
-    ├── cert_gl.jpg
-    ├── cert_nptel.jpg
-    ├── cert_infosys1.jpg
-    └── cert_infosys2.jpg
+    ├── Fevicon.jpg          # Browser tab icon
+    ├── Project 1.png        # LockVerse screenshot
+    ├── Project 2.png        # Lodge Management System screenshot
+    ├── Certificate1.jpeg    # SQL for Data Science — Great Learning
+    ├── Certificate 2.png    # Privacy and Security — NPTEL
+    ├── Certificate 3.jpeg   # Bash Scripting — Infosys Springboard
+    └── Certificate 4.jpeg   # Data Structures Java — Infosys Springboard
 ```
 
 ---
@@ -70,6 +72,8 @@ Portfolio/
    # Or use Live Server in VS Code for best experience
    ```
 
+> **Note:** The contact form uses [EmailJS](https://www.emailjs.com/). The credentials are already configured. To use your own account, replace `YOUR_PUBLIC_KEY`, `YOUR_SERVICE_ID`, and `YOUR_TEMPLATE_ID` in `script.js`.
+
 ---
 
 ## 📂 Sections
@@ -82,7 +86,7 @@ Portfolio/
 | **Experience** | Full Stack Internship at Kakunje Software, Mangaluru (Jan–Apr 2026) |
 | **Projects** | LockVerse Password Manager · Lodge Management System |
 | **Certifications** | Great Learning · NPTEL · Infosys Springboard (×2) |
-| **Contact** | Contact chips + message form |
+| **Contact** | Contact chips + EmailJS-powered message form |
 
 ---
 
@@ -113,6 +117,6 @@ Portfolio/
 
 | Channel | Link |
 |---|---|
+| Email | [deekshith3838@gmail.com](mailto:deekshith3838@gmail.com) |
 | LinkedIn | [linkedin.com/in/deekshith38](https://linkedin.com/in/deekshith38) |
 | GitHub | [github.com/deekshith-shettigar](https://github.com/deekshith-shettigar) |
-

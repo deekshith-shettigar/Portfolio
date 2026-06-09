@@ -116,6 +116,35 @@ if (scrollDownBtn) {
     });
 }
 
+// ── Active nav link scroll-spy (desktop) ──
+function initScrollSpy() {
+    if (isMobile()) return;
+    const allSections = ['home', ...SECTIONS];
+    const navLinks = document.querySelectorAll('.nav_menu_list .nav-link');
+
+    const spy = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.toggle('nav-link-active', link.getAttribute('href') === `#${id}`);
+                });
+            }
+        });
+    }, { threshold: 0.35 });
+
+    allSections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) spy.observe(el);
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollSpy);
+} else {
+    initScrollSpy();
+}
+
 // ── Header shadow on scroll ──
 window.addEventListener('scroll', function() {
     const navHeader = document.getElementById("header");
@@ -201,4 +230,54 @@ const typingEffect = new Typed(".typedText", {
     typeSpeed: 100,
     backSpeed: 80,
     backDelay: 2000,
+});
+
+// ── EmailJS Contact Form ──
+// 1. Sign up free at https://www.emailjs.com
+// 2. Create an Email Service  → copy the Service ID  → replace YOUR_SERVICE_ID
+// 3. Create an Email Template → copy the Template ID → replace YOUR_TEMPLATE_ID
+//    Template variables to use: {{from_name}}, {{from_email}}, {{message}}
+// 4. Go to Account → API Keys → copy the Public Key → replace YOUR_PUBLIC_KEY
+emailjs.init('0UnGu94052KYZfu3p');
+
+document.getElementById('send-btn').addEventListener('click', function () {
+    const name    = document.getElementById('contact-name').value.trim();
+    const email   = document.getElementById('contact-email').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+    const toast   = document.getElementById('contact-toast');
+    const btn     = this;
+
+    if (!name || !email || !message) {
+        toast.textContent = '⚠️ Please fill in all fields.';
+        toast.style.color = '#e74c3c';
+        toast.style.display = 'block';
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    emailjs.send('service_svg8pgh', 'template_6wqheo8', {
+        name:  name,
+        email: email,
+        message:    message,
+    })
+    .then(() => {
+        toast.textContent = '✅ Message sent! I\'ll get back to you soon.';
+        toast.style.color = '#27ae60';
+        toast.style.display = 'block';
+        document.getElementById('contact-name').value    = '';
+        document.getElementById('contact-email').value   = '';
+        document.getElementById('contact-message').value = '';
+    })
+    .catch(() => {
+        toast.textContent = '❌ Something went wrong. Please try emailing directly.';
+        toast.style.color = '#e74c3c';
+        toast.style.display = 'block';
+    })
+    .finally(() => {
+        btn.disabled = false;
+        btn.innerHTML = 'Send Message <i class="uil uil-message"></i>';
+        setTimeout(() => { toast.style.display = 'none'; }, 6000);
+    });
 });
