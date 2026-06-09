@@ -10,7 +10,6 @@
     --first-color: rgb(110, 87, 224);
     --first-color-hover: rgb(40, 91, 212);
 
-    --second-color: rgb(0, 201, 255);
     --third-color: rgb(192, 166, 49);
     --second-color: rgba(0, 0, 0, 0.1);
 }
@@ -51,7 +50,7 @@ html {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: 2s;
+    transition: 0.25s;
 }
 
 .btn i {
@@ -207,7 +206,6 @@ nav {
     cursor: pointer;
 }
 
-/* Initially show hamburger icon, hide close icon */
 #navOpenIcon {
     display: inline;
 }
@@ -216,7 +214,6 @@ nav {
     display: none;
 }
 
-/* When nav menu is open, position close button inside sidebar */
 .nav-menu.responsive ~ .nav-menu-btn {
     position: fixed;
     top: 18px;
@@ -234,7 +231,6 @@ nav {
     font-size: 26px;
 }
 
-/* Show menu button on mobile */
 @media only screen and (max-width:900px) {
     .nav-menu-btn {
         display: flex;
@@ -1206,7 +1202,6 @@ textarea:focus {
     }
 }
 
-
 footer {
     background: #1a1a2e;
     padding: 48px 5vw 28px;
@@ -1312,7 +1307,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Responsive */
+/* ── Responsive ── */
 @media only screen and (max-width:1024px) {
     .featured-text {
         padding: 0;
@@ -1336,16 +1331,20 @@ footer {
 }
 
 @media only screen and (max-width:900px) {
+
+    /* ── Mobile section top padding: prevents heading hiding behind fixed navbar ── */
+    .section {
+        padding-top: 90px !important;
+    }
+
     .education-header {
         flex-direction: column;
         text-align: center;
         align-items: center;
     }
 
-    /* Push content down when nav menu is open */
     .nav-menu.responsive+.wrapper {
         padding-top: 90vh;
-        /* same as nav menu height */
     }
 
     .education-icon {
@@ -1567,7 +1566,6 @@ footer {
     .project-card {
         width: 80%;
     }
-
 }
 
 @media only screen and (max-width:1024px) {
@@ -1586,7 +1584,7 @@ footer {
     .wrapper {
         padding-inline: 4vw;
     }
-    
+
     .featured-text-card {
         margin-right: 0;
         padding: 8px 12px;
@@ -1644,17 +1642,17 @@ footer {
     .nav-menu-btn i {
         font-size: 26px;
     }
-    
+
     .row {
         gap: 15px;
     }
-    
+
     .col {
         width: 100%;
         min-width: auto;
     }
-    
-    .about-info, 
+
+    .about-info,
     .skills-box,
     .contact-info {
         padding: 15px;
@@ -1665,7 +1663,7 @@ footer {
     .wrapper {
         padding-inline: 3vw;
     }
-    
+
     nav {
         padding-inline: 4vw;
         height: 60px;
@@ -1709,46 +1707,47 @@ footer {
         width: 100%;
         min-width: auto;
         padding: 18px;
-    }    
+    }
+
     .social_icons {
         gap: 15px;
     }
-    
+
     .icon a {
         width: 35px;
         height: 35px;
     }
-    
+
     .skills-box h3 {
         font-size: 18px;
     }
-    
+
     .skills-list span {
         font-size: 12px;
         padding: 5px 10px;
     }
-    
+
     .education-degree {
         font-size: 18px;
     }
-    
+
     .education-institution {
         font-size: 14px;
     }
-    
+
     .education-duration {
         font-size: 13px;
     }
-    
+
     .footer_menu_list a {
         margin-inline: 10px;
         font-size: 14px;
     }
-    
+
     .top-footer p {
         font-size: 20px;
     }
-    
+
     .bottom-footer {
         font-size: 12px;
         text-align: center;
@@ -1766,7 +1765,7 @@ footer {
     }
 }
 
-/* More Projects button */
+/* ── More Projects button ── */
 .more-projects-wrap {
     display: flex;
     justify-content: center;
@@ -1916,7 +1915,7 @@ footer {
     }
 }
 
-/* Experience section bullet points */
+/* ── Experience section bullet points ── */
 .experience-points {
     margin-top: 12px;
     padding-left: 20px;
@@ -2264,7 +2263,7 @@ footer {
     }
 }
 
-/* ── Scroll Animations ── */
+/* ── Scroll Animations (desktop only) ── */
 .animate-hidden {
     opacity: 0;
     transform: translateY(40px);
@@ -2288,9 +2287,21 @@ footer {
     transform: none !important;
 }
 
-/* Staggered delays for child elements */
+/* Staggered delays */
 .stagger-1 { transition-delay: 0.1s !important; }
 .stagger-2 { transition-delay: 0.2s !important; }
 .stagger-3 { transition-delay: 0.3s !important; }
 .stagger-4 { transition-delay: 0.4s !important; }
 .stagger-5 { transition-delay: 0.5s !important; }
+
+/* ── Disable animations on mobile entirely ── */
+@media only screen and (max-width: 900px) {
+    .animate-hidden {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .stagger-1, .stagger-2, .stagger-3, .stagger-4, .stagger-5 {
+        transition-delay: 0s !important;
+    }
+}

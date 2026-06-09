@@ -11,30 +11,42 @@ function initMobile() {
             const el = document.getElementById(id);
             if (el) el.style.display = '';
         });
+        const homeEl = document.getElementById('home');
+        if (homeEl) homeEl.style.display = '';
         return;
     }
     SECTIONS.forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = 'none';
     });
+    const homeEl = document.getElementById('home');
+    if (homeEl) homeEl.style.display = '';
     activeSection = null;
 }
 
 function showSection(id) {
     if (!isMobile()) return;
+
     SECTIONS.forEach(sid => {
         const el = document.getElementById(sid);
         if (el) el.style.display = 'none';
     });
+    const homeEl = document.getElementById('home');
+    if (homeEl) homeEl.style.display = 'none';
+
     const target = document.getElementById(id);
     if (target) {
         target.style.display = '';
         activeSection = id;
-        triggerSectionAnimations(id);
+
+        // Remove all animation classes so elements are immediately visible
+        target.querySelectorAll('.animate-hidden, .animate-visible').forEach(el => {
+            el.classList.remove('animate-hidden', 'animate-left', 'animate-right', 'animate-scale', 'animate-visible');
+            el.classList.remove('stagger-1', 'stagger-2', 'stagger-3', 'stagger-4', 'stagger-5');
+        });
+
         setTimeout(() => {
-            const navHeight = document.getElementById('header').offsetHeight;
-            const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 10;
-            window.scrollTo({ top: top, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }, 80);
     }
 }
@@ -44,6 +56,8 @@ function goBackHome() {
         const el = document.getElementById(id);
         if (el) el.style.display = 'none';
     });
+    const homeEl = document.getElementById('home');
+    if (homeEl) homeEl.style.display = '';
     activeSection = null;
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -114,17 +128,25 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// ── Resize handler ──
+// ── Resize handler (fixed) ──
+let wasMobile = isMobile();
+
 window.addEventListener('resize', () => {
-    activeSection = null;
-    initMobile();
+    const nowMobile = isMobile();
+    if (wasMobile !== nowMobile) {
+        wasMobile = nowMobile;
+        activeSection = null;
+        initMobile();
+    }
 });
 
 // ── Init ──
 initMobile();
 
-// ── Scroll Animations ──
+// ── Scroll Animations (desktop only) ──
 function initAnimations() {
+    if (isMobile()) return; // Skip on mobile — sections shown instantly
+
     const animTargets = [
         { selector: '.top-header', cls: 'animate-hidden' },
         { selector: '.about-profile-card', cls: 'animate-hidden animate-left' },
@@ -166,23 +188,6 @@ function setupObserver() {
     });
 }
 
-function triggerSectionAnimations(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (!section) return;
-    section.querySelectorAll('.animate-hidden').forEach(el => {
-        el.classList.remove('animate-visible');
-    });
-    setTimeout(() => {
-        setupObserver();
-        section.querySelectorAll('.animate-hidden').forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                el.classList.add('animate-visible');
-            }
-        });
-    }, 60);
-}
-
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAnimations);
 } else {
@@ -190,8 +195,8 @@ if (document.readyState === 'loading') {
 }
 
 // ── Typing Effect ──
-var typingEffect = new Typed(".typedText", {
-    strings: ["Deekshith...","Developer...", "Designer..."],
+const typingEffect = new Typed(".typedText", {
+    strings: ["Deekshith...", "Developer...", "Designer..."],
     loop: true,
     typeSpeed: 100,
     backSpeed: 80,
