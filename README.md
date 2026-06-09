@@ -39,7 +39,7 @@ Portfolio/
 ├── index.html          # Main HTML file
 ├── style.css           # All styles and responsive CSS
 ├── script.js           # Interactivity, animations, mobile logic, EmailJS handler
-├── My_Resume.pdf       # Downloadable CV
+├── Deekshith_Resume.pdf       # Downloadable CV
 └── assets/
     ├── avatar.jpg           # Profile photo
     ├── Logo.png             # Navbar logo
