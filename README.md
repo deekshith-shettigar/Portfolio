@@ -2,77 +2,35 @@
 
 A modern, fully responsive personal portfolio website showcasing my skills, projects, experience, and certifications as a Full Stack Developer.
 
+## 🔗 Live Site
+
+https://deekshith-shettigar.vercel.app
+
 ---
 
 ## ✨ Features
 
 - **Responsive Design** — Optimized for desktop, tablet, and mobile with a custom mobile sidebar navigation
 - **Mobile Sidebar** — Slide-in drawer with profile card, nav links, and social icons
-- **Typing Effect** — Dynamic role animation on the hero section (Designer / Developer)
+- **Typing Effect** — Dynamic role animation on the hero section
 - **Scroll Animations** — Smooth fade/slide/scale animations triggered on scroll using Intersection Observer
-- **Active Nav Highlighting** — Scroll-spy highlights the current section in the navbar as you scroll
+- **Active Nav Highlighting** — Scroll-spy highlights the current section in the navbar
 - **Working Contact Form** — EmailJS-powered form with validation, loading state, and success/error toast
-- **Sections** — Home, About, Education, Experience, Projects, Certifications, Contact
-- **Project Previews** — Screenshot images with tech stack badges, bullet points, GitHub & Live Demo buttons
+- **Project Previews** — Screenshot images with tech stack badges, GitHub & Live Demo buttons
 - **Certificate Gallery** — Real certificate images displayed in a card grid
 - **Downloadable Resume** — CV download button in navbar, hero, about, and mobile sidebar
-- **Social Links** — Instagram, LinkedIn, GitHub integrated throughout
-- **SEO Ready** — Meta description and optimised title tag for search and link previews
+- **SEO Ready** — Meta description and optimised title tag
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
 | Category | Technologies |
 |---|---|
 | Structure | HTML5 |
-| Styling | CSS3, Custom Animations, Flexbox, Grid |
+| Styling | CSS3, Flexbox, Grid, Custom Animations |
 | Scripting | Vanilla JavaScript, Intersection Observer API |
-| Libraries | [Typed.js](https://github.com/mattboldt/typed.js/) · [EmailJS](https://www.emailjs.com/) · [Unicons v4](https://iconscout.com/unicons) · [Google Fonts (Poppins)](https://fonts.google.com/specimen/Poppins) |
-
----
-
-## 📁 Project Structure
-
-```
-Portfolio/
-├── index.html          # Main HTML file
-├── style.css           # All styles and responsive CSS
-├── script.js           # Interactivity, animations, mobile logic, EmailJS handler
-├── Deekshith_Resume.pdf       # Downloadable CV
-└── assets/
-    ├── avatar.jpg           # Profile photo
-    ├── Logo.png             # Navbar logo
-    ├── Fevicon.jpg          # Browser tab icon
-    ├── Project 1.png        # LockVerse screenshot
-    ├── Project 2.png        # Lodge Management System screenshot
-    ├── Certificate1.jpeg    # SQL for Data Science — Great Learning
-    ├── Certificate 2.png    # Privacy and Security — NPTEL
-    ├── Certificate 3.jpeg   # Bash Scripting — Infosys Springboard
-    └── Certificate 4.jpeg   # Data Structures Java — Infosys Springboard
-```
-
----
-
-## 🚀 Getting Started
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/deekshith-shettigar/portfolio.git
-   ```
-
-2. **Navigate to the project:**
-   ```bash
-   cd portfolio
-   ```
-
-3. **Open in browser:**
-   ```bash
-   # Simply open index.html in any browser
-   # Or use Live Server in VS Code for best experience
-   ```
-
-> **Note:** The contact form uses [EmailJS](https://www.emailjs.com/). The credentials are already configured. To use your own account, replace `YOUR_PUBLIC_KEY`, `YOUR_SERVICE_ID`, and `YOUR_TEMPLATE_ID` in `script.js`.
+| Libraries | Typed.js · EmailJS · Unicons v4 · Google Fonts (Poppins) |
 
 ---
 
@@ -81,8 +39,8 @@ Portfolio/
 | Section | Description |
 |---|---|
 | **Home** | Hero with typing effect, photo, download CV, social links |
-| **About** | Profile card, bio, full skills breakdown with soft skills |
-| **Education** | BE (CGPA 8.61) and PUC (93.33%) cards with subject highlights |
+| **About** | Profile card, bio, skills breakdown |
+| **Education** | BE (CGPA 8.61) and PUC (93.33%) with subject highlights |
 | **Experience** | Full Stack Internship at Kakunje Software, Mangaluru (Jan–Apr 2026) |
 | **Projects** | LockVerse Password Manager · Lodge Management System |
 | **Certifications** | Great Learning · NPTEL · Infosys Springboard (×2) |
@@ -98,9 +56,9 @@ Portfolio/
 - 🔗 [GitHub](https://github.com/deekshith-shettigar/Lockverse_Password_Manager) · [Live Demo](https://lockverse-frontend.onrender.com/)
 
 ### 🏨 Lodge Management System
-- Bookings, billing, housekeeping, Razorpay payments, OTP reset, CSRF protection
+- Bookings, billing, housekeeping, Razorpay payments, OTP reset
 - PHP · MySQL · JavaScript · Bootstrap · Razorpay
-- 🔗 [GitHub](https://github.com/deekshith-shettigar)
+- 🔗 [GitHub](https://github.com/deekshith-shettigar/karavali-lodge) · [Live Demo](https://karavalilodge.freedev.app/user/)
 
 ---
 
